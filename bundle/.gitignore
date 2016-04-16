@@ -1,3 +1,4 @@
+# Only track Vundle. Ignore others that are managed by Vundle.
 *
 !.gitignore
 !Vundle.vim
