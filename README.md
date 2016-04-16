@@ -10,5 +10,7 @@ ln -s ~/.vim/vimrc ~/.vimrc
 vim +PluginInstall +qall     # Install plugins
 
 cd bundle/YouCompleteMe
-./install.py                 # Install YCM. Use --all to enable everything.
+./install.py --clang-completer --tern-completer
+cd ../../
+
 ```
