@@ -1,9 +1,7 @@
 " ==============================================================================
-" Use pathogen.vim: https://github.com/tpope/vim-pathogen
+" Use vundle settings first.
 " ==============================================================================
-
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+source ~/.vim/bundles.vim
 
 
 " ==============================================================================
