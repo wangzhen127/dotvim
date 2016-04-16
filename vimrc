@@ -1,4 +1,12 @@
 " ==============================================================================
+" Use pathogen.vim: https://github.com/tpope/vim-pathogen
+" ==============================================================================
+
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
+
+" ==============================================================================
 " The following settings come from $VIMRUNTIME/vimrc_example.vim. 
 " For detailed explanation, see :help vimrc-intro.
 "
