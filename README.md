@@ -8,4 +8,7 @@ git submodule update --init  # Get Vundle.vim
 
 ln -s ~/.vim/vimrc ~/.vimrc
 vim +PluginInstall +qall     # Install plugins
+
+cd bundle/YouCompleteMe
+./install.py                 # Install YCM. Use --all to enable everything.
 ```
