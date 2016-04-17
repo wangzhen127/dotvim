@@ -132,10 +132,19 @@ packadd matchit
 " Customized settings
 " ==============================================================================
 
+set cursorline
+highlight clear CursorLineNr
+
 set hidden
 set wildmode=longest,list
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 set number
+
+" Disable arrow keys
+noremap <up>    <nop>
+noremap <down>  <nop>
+noremap <left>  <nop>
+noremap <right> <nop>
 
