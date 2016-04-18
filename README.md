@@ -13,4 +13,11 @@ cd bundle/YouCompleteMe
 ./install.py --clang-completer --tern-completer
 cd ../../
 
+# ag --ignore currently seems to have problems. Use global ~/.agignore file.
+echo .git >> ~/.agignore
+echo .svn >> ~/.agignore
+echo .hg >> ~/.agignore
+
+mkdir -p ~/.vim-tmp         # for backup and swap files
+
 ```
