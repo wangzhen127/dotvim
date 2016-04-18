@@ -29,7 +29,7 @@ filetype plugin indent on    " required
 
 
 " ag.vim
-nnoremap <leader>a :Ag<space>
+nnoremap <leader>ag :Ag<space>
 
 " ctrlp
 if executable('ag')
@@ -40,10 +40,14 @@ else
   let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$' " ignore those files
 endif
 let g:ctrlp_match_window = 'bottom,order:ttb' " position and result order
+let g:ctrlp_max_height = 20       " height of ctrlp window
 let g:ctrlp_working_path_mode = 0 " use current working directory as search dir
 let g:ctrlp_use_caching = 0       " disable per-session caching
 
 " NERDTree
+map <leader>nt :NERDTree<cr>
+map <leader>ntt :NERDTreeToggle<cr>
+map <leader>ntf :NERDTreeFind<cr>
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
@@ -58,14 +62,4 @@ let g:NERDTreeIndicatorMapCustom = {
 
 " vim-colorschemes
 colorscheme monokai
-
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 

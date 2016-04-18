@@ -1,4 +1,4 @@
-source ~/.vim/bundles.vim       " Use vundle settings first.
+source ~/.vim/vundle_config.vim " Use vundle configurations first.
 
 set nocompatible
 
@@ -6,9 +6,12 @@ filetype plugin indent on       " enable file type detections
 set autoread                    " auto read again if changed outside of vim
 set hidden                      " allow unwritten file in hidden buffer
 
+set fileformats=unix,dos,mac    " set file format preference
+set encoding=utf8               " set utf8 as the standard encoding
 set backspace=indent,eol,start  " backspace over everything in insert mode
 set wildmode=longest,list       " autocomplete command and list command matches
 set history=1000                " keep 1000 lines of command line history
+set scrolloff=7                 " number of lines above and below the cursor
 set lazyredraw                  " redraw only when we need to
 set showcmd		                  " show incomplete commands
 set number                      " show line numbers
@@ -19,11 +22,14 @@ set tabstop=2                   " number of visual spaces per tab
 set softtabstop=2               " number of spaces in tab when editing
 set expandtab                   " tabs are spaces
 set shiftwidth=2                " number of spaces when indent or unindent
+set autoindent                  " auto indent
+set smartindent                 " smart indent
 
 syntax enable                   " enable syntax highlighting
 set cursorline                  " highlight cursor line
 highlight clear CursorLineNr    " not highlight line number
 set showmatch                   " highlight matching [{()}]
+set matchtime=2                 " Tenths of seconds to show the match
 let c_comment_strings=1         " highlight strings inside C comments
 
 set laststatus=2                " always show status line
@@ -32,6 +38,7 @@ set statusline+=%=              " separator
 set statusline+=%l,%c\ %t       " show cursor posion and file name
 
 set foldenable                  " enable folding
+set foldcolumn=1                " add 1 column to indicate folds
 set foldnestmax=10              " 10 nested fold max
 set foldmethod=indent           " fold based on indent level
 set foldlevelstart=10           " open most folds by default
@@ -57,6 +64,10 @@ let &colorcolumn="80,".join(range(120,999),",") " 80 and 120 coloum markers
 " sequence and start new change, so that you can undo ctrl-u and ctrl-w.
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
+
+" Treat long wrapped lines as multiple lines
+map j gj
+map k gk
 
 " Disable arrow keys
 noremap <up>    <nop>
