@@ -11,7 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'rking/ag.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tmhedberg/matchit'
-Plugin 'vim-scripts/mru.vim'
+Plugin 'Valloric/MatchTagAlways'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
@@ -32,6 +32,11 @@ filetype plugin indent on    " required
 nnoremap <leader>ag :Ag<space>
 
 " ctrlp
+map <leader>cp  :CtrlP
+map <leader>cpb :CtrlPBuffer
+map <leader>cpm :CtrlPMRU
+map <leader>cpr :CtrlPRoot
+
 if executable('ag')
   " Using ag will be faster. Use ~/.agignore to specify ignore patterns.
   let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
@@ -45,9 +50,11 @@ let g:ctrlp_working_path_mode = 0 " use current working directory as search dir
 let g:ctrlp_use_caching = 0       " disable per-session caching
 
 " NERDTree
-map <leader>nt :NERDTree<cr>
-map <leader>ntt :NERDTreeToggle<cr>
-map <leader>ntf :NERDTreeFind<cr>
+map <leader>nt  :NERDTree
+map <leader>ntc :NERDTreeClose
+map <leader>ntt :NERDTreeToggle
+map <leader>ntf :NERDTreeFind
+
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",

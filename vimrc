@@ -1,6 +1,7 @@
-source ~/.vim/vundle_config.vim " Use vundle configurations first.
-
 set nocompatible
+let mapleader='\'               " explicitly define <leader> as \
+
+source ~/.vim/vundle_config.vim " Use vundle configurations first.
 
 filetype plugin indent on       " enable file type detections
 set autoread                    " auto read again if changed outside of vim
@@ -60,6 +61,8 @@ set backupskip=/tmp/*,/private/tmp/*                  " skip backup for those
 
 let &colorcolumn="80,".join(range(120,999),",") " 80 and 120 coloum markers
 
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store,*~,*.pyc
+
 " ctrl-u and ctrl-w cannot be undone. Use ctrl-g u to first break undo
 " sequence and start new change, so that you can undo ctrl-u and ctrl-w.
 inoremap <c-u> <c-g>u<c-u>
@@ -87,6 +90,7 @@ if !exists(":DiffOrig")
 endif
 
 if has("autocmd")
+  autocmd VimEnter * silent! lcd %:p:h " auto change cwd to startup file dir
   autocmd BufReadPost * :call <SID>JumpToLastKnownCursorPosition()
   autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 endif
