@@ -1,5 +1,6 @@
 set nocompatible
 let mapleader='\'               " explicitly define <leader> as \
+syntax enable                   " enable syntax highlighting from beginning
 
 source ~/.vim/vundle_config.vim " Use vundle configurations first.
 
@@ -14,8 +15,11 @@ set wildmode=longest,list       " autocomplete command and list command matches
 set history=1000                " keep 1000 lines of command line history
 set scrolloff=7                 " number of lines above and below the cursor
 set lazyredraw                  " redraw only when we need to
-set showcmd		                  " show incomplete commands
+set cursorline                  " highlight cursor line
 set number                      " show line numbers
+set showcmd		                  " show incomplete commands
+set showmatch                   " highlight matching [{()}]
+set matchtime=2                 " Tenths of seconds to show the match
 " highlight last inserted text
 nnoremap gV `[v`]
 
@@ -26,20 +30,12 @@ set shiftwidth=2                " number of spaces when indent or unindent
 set autoindent                  " auto indent
 set smartindent                 " smart indent
 
-syntax enable                   " enable syntax highlighting
-set cursorline                  " highlight cursor line
-highlight clear CursorLineNr    " not highlight line number
-set showmatch                   " highlight matching [{()}]
-set matchtime=2                 " Tenths of seconds to show the match
-let c_comment_strings=1         " highlight strings inside C comments
-
 set laststatus=2                " always show status line
 set statusline+=%{getcwd()}     " show current working directory
 set statusline+=%=              " separator
 set statusline+=%l,%c\ %t       " show cursor posion and file name
 
 set foldenable                  " enable folding
-set foldcolumn=1                " add 1 column to indicate folds
 set foldnestmax=10              " 10 nested fold max
 set foldmethod=indent           " fold based on indent level
 set foldlevelstart=10           " open most folds by default
@@ -59,9 +55,14 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp   " dir for backup files
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp   " dir for swap files
 set backupskip=/tmp/*,/private/tmp/*                  " skip backup for those
 
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store,*~,*.pyc
+
 let &colorcolumn="80,".join(range(100,999),",") " 80 and 100 coloum markers
 
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store,*~,*.pyc
+" draw white spaces without highlight
+set list
+set listchars=space:·,tab:·\ ,trail:·,extends:»,precedes:« " eol:$
+highlight SpecialKey ctermbg=None guibg=None
 
 " ctrl-u and ctrl-w cannot be undone. Use ctrl-g u to first break undo
 " sequence and start new change, so that you can undo ctrl-u and ctrl-w.

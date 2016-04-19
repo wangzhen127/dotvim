@@ -70,3 +70,16 @@ let g:NERDTreeIndicatorMapCustom = {
 
 " vim-colorschemes
 colorscheme monokai
+
+" fine tune monokai:
+" https://github.com/flazz/vim-colorschemes/blob/master/colors/Monokai.vim
+" - Normal: darker ctermbg/guibg
+" - LineNr: same ctermbg/guibg as Normal
+" - ColorColumn: darker ctermbg/guibg
+" - CursorLine: darker ctermbg/guibg
+" - CursorLineNr: clear highlight
+highlight Normal ctermfg=231 ctermbg=233 cterm=NONE guifg=#f8f8f2 guibg=#1a1a16 gui=NONE
+highlight LineNr ctermfg=102 ctermbg=233 cterm=NONE guifg=#90908a guibg=#1a1a16 gui=NONE
+highlight ColorColumn ctermfg=NONE ctermbg=234 cterm=NONE guifg=NONE guibg=#22221f gui=NONE
+highlight CursorLine ctermfg=NONE ctermbg=234 cterm=NONE guifg=NONE guibg=#22221f gui=NONE
+highlight clear CursorLineNr
