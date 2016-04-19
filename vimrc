@@ -59,7 +59,7 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp   " dir for backup files
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp   " dir for swap files
 set backupskip=/tmp/*,/private/tmp/*                  " skip backup for those
 
-let &colorcolumn="80,".join(range(120,999),",") " 80 and 120 coloum markers
+let &colorcolumn="80,".join(range(100,999),",") " 80 and 100 coloum markers
 
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store,*~,*.pyc
 
@@ -91,8 +91,8 @@ endif
 
 if has("autocmd")
   autocmd VimEnter * silent! lcd %:p:h " auto change cwd to startup file dir
-  autocmd BufReadPost * :call <SID>JumpToLastKnownCursorPosition()
-  autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+  autocmd BufReadPost * call <SID>JumpToLastKnownCursorPosition()
+  autocmd BufWritePre * call <SID>TrimTrailingEmptyLinesAndSpaces()
 endif
 
 " When editing a file, always jump to the last known cursor position.
@@ -104,15 +104,35 @@ function! <SID>JumpToLastKnownCursorPosition()
   endif
 endfunction
 
-" strips trailing whitespace at the end of files. this
-" is called on buffer write in the autogroup above.
-function! <SID>StripTrailingWhitespaces()
+" Trim trailing empty lines at the end of file and spaces at the end of line.
+" This is called on buffer write.
+function! <SID>TrimTrailingEmptyLinesAndSpaces()
   " save last search & cursor position
   let _s=@/
   let l = line(".")
   let c = col(".")
+
+  " trim trailing empty lines
+  let lines = line('$')
+  let done = 0
+  " loop so that we can also delete trailing lines consisting of only whitespace
+  while !done
+    " erase last line if it's only whitespace
+    %s/^\s*\%$//e
+
+    " erase trailing blank lines
+    %s/\n*\%$/\r/e
+    %s/\n*\%$//e
+
+    " if we actually did anything, assume that we have more to do
+    let done = lines == line('$')
+    let lines = line('$')
+  endwhile
+
+  " trim trailing spaces
   %s/\s\+$//e
+
+  " restore last search & cursor position
   let @/=_s
   call cursor(l, c)
 endfunction
-

@@ -16,6 +16,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
@@ -69,4 +70,3 @@ let g:NERDTreeIndicatorMapCustom = {
 
 " vim-colorschemes
 colorscheme monokai
-
