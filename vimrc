@@ -35,7 +35,7 @@ set smartindent                 " smart indent
 set laststatus=2                " always show status line
 set statusline+=%{getcwd()}     " show current working directory
 set statusline+=%=              " separator
-set statusline+=%l,%c\ %t       " show cursor posion and file name
+set statusline+=%p%%\ %l,%c\ %t " show cursor posion and file name
 
 set foldenable                  " enable folding
 set foldnestmax=10              " 10 nested fold max
@@ -73,6 +73,12 @@ inoremap <c-w> <c-g>u<c-w>
 " Treat long wrapped lines as multiple lines
 map j gj
 map k gk
+
+" Better window navigation
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
 
 " Disable arrow keys
 noremap <up>    <nop>

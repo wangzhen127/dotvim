@@ -20,4 +20,6 @@ echo .hg >> ~/.agignore
 
 mkdir -p ~/.vim-tmp         # for backup and swap files
 
+# For quickopen, need to add the targe project to index from command line.
+# See https://github.com/natduca/quickopen
 ```

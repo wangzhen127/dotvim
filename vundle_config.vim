@@ -9,20 +9,24 @@ Plugin 'VundleVim/Vundle.vim'
 
 " plugins on GitHub repo
 Plugin 'rking/ag.vim'
+" Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tmhedberg/matchit'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'scrooloose/syntastic'
+Plugin 'natduca/quickopen'
+" Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'easymotion/vim-easymotion'
+" Plugin 'terryma/vim-multiple-cursors'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'tpope/vim-surround'
-"Plugin 'Valloric/YouCompleteMe'
+" Plugin 'tpope/vim-repeat'
+" Plugin 'tpope/vim-surround'
+" Plugin 'tpope/vim-unimpaired'
+" Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -48,6 +52,7 @@ endif
 let g:ctrlp_match_window = 'bottom,order:ttb' " position and result order
 let g:ctrlp_max_height = 20       " height of ctrlp window
 let g:ctrlp_working_path_mode = 0 " use current working directory as search dir
+let g:ctrlp_follow_symlinks = 1   " follow symlinks but ignore looped ones
 let g:ctrlp_use_caching = 0       " disable per-session caching
 
 " NERDTree
