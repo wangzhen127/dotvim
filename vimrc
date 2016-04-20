@@ -1,8 +1,10 @@
 set nocompatible
 let mapleader='\'               " explicitly define <leader> as \
-syntax enable                   " enable syntax highlighting from beginning
 
 source ~/.vim/vundle_config.vim " Use vundle configurations first.
+
+syntax enable                   " enable syntax highlighting
+colorscheme monokai_customized  " use customized monokai color scheme
 
 filetype plugin indent on       " enable file type detections
 set autoread                    " auto read again if changed outside of vim
@@ -62,7 +64,6 @@ let &colorcolumn="80,".join(range(100,999),",") " 80 and 100 coloum markers
 " draw white spaces without highlight
 set list
 set listchars=space:·,tab:·\ ,trail:·,extends:»,precedes:« " eol:$
-highlight SpecialKey ctermbg=None guibg=None
 
 " ctrl-u and ctrl-w cannot be undone. Use ctrl-g u to first break undo
 " sequence and start new change, so that you can undo ctrl-u and ctrl-w.
