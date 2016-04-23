@@ -4,7 +4,19 @@ let mapleader='\'               " explicitly define <leader> as \
 source ~/.vim/vundle_config.vim " Use vundle configurations first.
 
 syntax enable                   " enable syntax highlighting
-colorscheme monokai_customized  " use customized monokai color scheme
+set background=dark
+let g:solarized_visibility = "low"
+colorscheme solarized
+
+set list                        " display special characters
+set listchars=space:·,tab:·\ ,trail:·,extends:»,precedes:« " eol:$
+
+set cursorline                  " highlight cursor line
+set laststatus=2                " always show status line
+set statusline+=%{getcwd()}     " show current working directory
+set statusline+=%=              " separator
+set statusline+=%p%%\ %l,%c\ %t " show cursor posion and file name
+let &colorcolumn="80,".join(range(100,999),",") " 80 and 100 coloum markers
 
 filetype plugin indent on       " enable file type detections
 set autoread                    " auto read again if changed outside of vim
@@ -17,7 +29,6 @@ set wildmode=longest,list       " autocomplete command and list command matches
 set history=1000                " keep 1000 lines of command line history
 set scrolloff=7                 " number of lines above and below the cursor
 set lazyredraw                  " redraw only when we need to
-set cursorline                  " highlight cursor line
 set number                      " show line numbers
 set showcmd		                  " show incomplete commands
 set showmatch                   " highlight matching [{()}]
@@ -31,11 +42,6 @@ set expandtab                   " tabs are spaces
 set shiftwidth=2                " number of spaces when indent or unindent
 set autoindent                  " auto indent
 set smartindent                 " smart indent
-
-set laststatus=2                " always show status line
-set statusline+=%{getcwd()}     " show current working directory
-set statusline+=%=              " separator
-set statusline+=%p%%\ %l,%c\ %t " show cursor posion and file name
 
 set foldenable                  " enable folding
 set foldnestmax=10              " 10 nested fold max
@@ -58,12 +64,6 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp   " dir for swap files
 set backupskip=/tmp/*,/private/tmp/*                  " skip backup for those
 
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store,*~,*.pyc
-
-let &colorcolumn="80,".join(range(100,999),",") " 80 and 100 coloum markers
-
-" draw white spaces without highlight
-set list
-set listchars=space:·,tab:·\ ,trail:·,extends:»,precedes:« " eol:$
 
 " ctrl-u and ctrl-w cannot be undone. Use ctrl-g u to first break undo
 " sequence and start new change, so that you can undo ctrl-u and ctrl-w.
