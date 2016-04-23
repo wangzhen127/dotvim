@@ -71,8 +71,8 @@ inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
 " Treat long wrapped lines as multiple lines
-map j gj
-map k gk
+nnoremap j gj
+nnoremap k gk
 
 " Better window navigation
 nmap <c-j> <c-w>j

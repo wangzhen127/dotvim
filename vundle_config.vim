@@ -34,7 +34,7 @@ filetype plugin indent on    " required
 
 
 " ag.vim
-nnoremap <leader>ag :Ag<space>
+nnoremap <leader>ag :Ag!
 
 " ctrlp
 map <leader>cp  :CtrlP
@@ -53,7 +53,6 @@ let g:ctrlp_match_window = 'bottom,order:ttb' " position and result order
 let g:ctrlp_max_height = 20       " height of ctrlp window
 let g:ctrlp_working_path_mode = 0 " use current working directory as search dir
 let g:ctrlp_follow_symlinks = 1   " follow symlinks but ignore looped ones
-let g:ctrlp_use_caching = 0       " disable per-session caching
 
 " NERDTree
 map <leader>nt  :NERDTree
