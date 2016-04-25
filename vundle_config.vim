@@ -26,6 +26,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 " Plugin 'tpope/vim-repeat'
 " Plugin 'tpope/vim-surround'
 " Plugin 'tpope/vim-unimpaired'
+Plugin 'nelstrom/vim-visual-star-search'
 " Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
