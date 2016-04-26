@@ -9,7 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " plugins on GitHub repo
 Plugin 'rking/ag.vim'
-" Plugin 'vim-scripts/argtextobj.vim'
+Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tmhedberg/matchit'
 Plugin 'Valloric/MatchTagAlways'
