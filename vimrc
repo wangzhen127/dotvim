@@ -4,9 +4,8 @@ let mapleader='\'               " explicitly define <leader> as \
 source ~/.vim/vundle_config.vim " Use vundle configurations first.
 
 syntax enable                   " enable syntax highlighting
-set background=dark
-let g:solarized_visibility = "low"
-colorscheme solarized
+set background=dark             " use dark background
+colorscheme solarized           " use solarized color scheme
 
 set list                        " display special characters
 set listchars=space:·,tab:·\ ,trail:·,extends:»,precedes:« " eol:$

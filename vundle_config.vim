@@ -17,6 +17,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'natduca/quickopen'
 " Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'altercation/vim-colors-solarized'
@@ -37,7 +38,7 @@ filetype plugin indent on    " required
 " ag.vim
 nnoremap <leader>ag :Ag!
 
-" ctrlp
+" ctrlp.vim
 map <leader>cp  :CtrlP
 map <leader>cpb :CtrlPBuffer
 map <leader>cpm :CtrlPMRU
@@ -55,7 +56,7 @@ let g:ctrlp_max_height = 20       " height of ctrlp window
 let g:ctrlp_working_path_mode = 0 " use current working directory as search dir
 let g:ctrlp_follow_symlinks = 1   " follow symlinks but ignore looped ones
 
-" NERDTree
+" nerdtree
 map <leader>nt  :NERDTree
 map <leader>ntc :NERDTreeClose
 map <leader>ntt :NERDTreeToggle
@@ -72,3 +73,9 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Clean"     : "✔︎",
     \ "Unknown"   : "?"
     \ }
+
+" tagbar
+map <leader>tt :TagbarToggle
+
+" vim-colors-solarized
+let g:solarized_visibility = "low"
