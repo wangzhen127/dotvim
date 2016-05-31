@@ -6,9 +6,10 @@ git clone git@github.com:wangzhen127/dotvim.git .vim
 cd .vim
 git submodule update --init   # Get Vundle.vim
 
-ln -sf ~/.vim/vimrc ~/.vimrc   # Link vimrc
-mkdir -p ~/.vim-tmp           # For backup and swap files
-vim +PluginInstall +qall      # Install plugins
+ln -sf ~/.vim/vimrc ~/.vimrc    # Link vimrc
+ln -sf ~/.vim/gvimrc ~/.gvimrc  # Link gvimrc
+mkdir -p ~/.vim-tmp             # For backup and swap files
+vim +PluginInstall +qall        # Install plugins
 
 # ag --ignore currently seems to have problems. Use global ~/.agignore file.
 echo .git >> ~/.agignore
