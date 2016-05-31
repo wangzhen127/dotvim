@@ -79,3 +79,13 @@ map <leader>tt :TagbarToggle
 
 " vim-colors-solarized
 let g:solarized_visibility = "low"
+
+" Only degrade solarized color scheme for Linux terminal. Mac can use iTerm2
+" color presets.
+if !has('gui_running')
+  let s:uname = system("echo -n \"$(uname)\"")
+  if !v:shell_error && s:uname == "Linux"
+    let g:solarized_termcolors=256
+    set t_Co=256
+  endif
+endif
