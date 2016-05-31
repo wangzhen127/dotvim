@@ -62,6 +62,8 @@ map <leader>ntc :NERDTreeClose
 map <leader>ntt :NERDTreeToggle
 map <leader>ntf :NERDTreeFind
 
+let g:nerdtree_tabs_open_on_gui_startup = 0 " Don't auto open nerdtree for gui
+
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
