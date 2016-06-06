@@ -1,5 +1,6 @@
 This repository contains my vim settings.
 
+Setup:
 ```
 cd
 git clone git@github.com:wangzhen127/dotvim.git .vim
@@ -29,3 +30,20 @@ For using [solarized color scheme](https://github.com/altercation/solarized) in 
 * Ubuntu GNOME Terminal:
   * https://github.com/seebi/dircolors-solarized
   * https://github.com/Anthony25/gnome-terminal-colors-solarized
+  * https://github.com/seebi/tmux-colors-solarized
+
+Config Solarized color scheme for Ubuntu GNOME Terminal:
+```
+rm ~/.solarized -rf
+mkdir ~/.solarized
+
+cd ~/.solarized
+git clone https://github.com/seebi/dircolors-solarized
+ln -sf ~/.solarized/dircolors-solarized/dircolors.256dark ~/.dircolors
+eval `dircolors ~/.dircolors`
+
+cd ~/.solarized
+git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git
+cd gnome-terminal-colors-solarized
+./install.sh  # Choose dark color scheme.
+```
