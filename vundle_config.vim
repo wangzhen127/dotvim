@@ -26,7 +26,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-" Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'nelstrom/vim-visual-star-search'
 " Plugin 'Valloric/YouCompleteMe'
 
