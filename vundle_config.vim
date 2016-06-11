@@ -20,6 +20,7 @@ Plugin 'natduca/quickopen'
 Plugin 'majutsushi/tagbar'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'ConradIrwin/vim-bracketed-paste'
+Plugin 'rhysd/vim-clang-format'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
@@ -78,6 +79,10 @@ let g:NERDTreeIndicatorMapCustom = {
 
 " tagbar
 map <leader>tt :TagbarToggle
+
+" vim-clang-format
+nnoremap <C-F> :ClangFormat<CR>
+inoremap <C-F> <ESC>:ClangFormat<CR>a
 
 " vim-colors-solarized
 let g:solarized_visibility = "low"
