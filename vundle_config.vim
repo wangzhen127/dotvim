@@ -81,8 +81,7 @@ let g:NERDTreeIndicatorMapCustom = {
 map <leader>tt :TagbarToggle
 
 " vim-clang-format
-nnoremap <C-F> :ClangFormat<CR>
-inoremap <C-F> <ESC>:ClangFormat<CR>a
+nnoremap <leader>f :ClangFormat<CR>
 
 " vim-colors-solarized
 let g:solarized_visibility = "low"
