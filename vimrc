@@ -7,8 +7,9 @@ syntax enable                   " enable syntax highlighting
 set background=dark             " use dark background
 colorscheme solarized           " use solarized color scheme
 
-set list                        " display special characters
-set listchars=space:·,tab:·\ ,trail:·,extends:»,precedes:« " eol:$
+" The special char does not work on Chrome remote desktop and virtual box.
+" set list                        " display special characters
+" set listchars=space:·,tab:·\ ,trail:·,extends:»,precedes:« " eol:$
 
 set cursorline                  " highlight cursor line
 set laststatus=2                " always show status line
