@@ -56,6 +56,10 @@ set hlsearch                    " highlight search matches
 " turn off search highlight with \<space>
 nnoremap <leader><space> :nohlsearch<CR>
 
+" clang format
+nnoremap <leader>fg :!clang-format -i -style=google %<CR><CR>
+nnoremap <leader>fc :!clang-format -i -style=chromium %<CR><CR>
+
 set writebackup   " enable backup before overwriting a file
 set backup        " enable backup after overwriting a file
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp   " dir for backup files
