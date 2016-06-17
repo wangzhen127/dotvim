@@ -57,8 +57,8 @@ set hlsearch                    " highlight search matches
 nnoremap <leader><space> :nohlsearch<CR>
 
 " clang format
-nnoremap <leader>fg :!clang-format -i -style=google %<CR><CR>
-nnoremap <leader>fc :!clang-format -i -style=chromium %<CR><CR>
+nnoremap <leader>f :!clang-format -i -style=google %<CR><CR>
+" nnoremap <leader>fc :!clang-format -i -style=chromium %<CR><CR>
 
 set writebackup   " enable backup before overwriting a file
 set backup        " enable backup after overwriting a file
