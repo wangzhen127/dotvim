@@ -57,9 +57,8 @@ set hlsearch                    " highlight search matches
 " turn off search highlight with \<space>
 nnoremap <leader><space> :nohlsearch<CR>
 
-" clang format
-nnoremap <leader>f
-    \ :w<CR>:silent !clang-format -i -style=google %<CR>:redraw!<CR>
+" customize format
+nnoremap <leader>f :Format<CR>
 
 set writebackup   " enable backup before overwriting a file
 set backup        " enable backup after overwriting a file
@@ -148,3 +147,12 @@ function! <SID>TrimTrailingEmptyLinesAndSpaces()
   let @/=_s
   call cursor(l, c)
 endfunction
+
+" Clang format
+function! <SID>Format()
+  write
+  silent !clang-format -i -style=google %
+  edit
+  redraw!
+endfunction
+command! Format call <SID>Format()
