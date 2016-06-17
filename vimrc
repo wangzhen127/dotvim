@@ -154,5 +154,6 @@ function! <SID>Format()
   silent !clang-format -i -style=google %
   edit
   redraw!
+  nohlsearch
 endfunction
 command! Format call <SID>Format()
