@@ -82,6 +82,8 @@ map <leader>tt :TagbarToggle
 
 " vim-clang-format
 nnoremap <leader>f :ClangFormat<CR>
+let g:clang_format#code_style = "google"
+" let g:clang_format#code_style = "chromium"
 
 " vim-colors-solarized
 let g:solarized_visibility = "low"
