@@ -81,3 +81,9 @@ map <leader>tt :TagbarToggle
 
 " vim-colors-solarized
 let g:solarized_visibility = "low"
+
+" vim-easymotion
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>w <Plug>(easymotion-w)
+map <Leader>b <Plug>(easymotion-b)
