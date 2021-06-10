@@ -15,7 +15,7 @@ Plugin 'tmhedberg/matchit'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'natduca/quickopen'
+" Plugin 'natduca/quickopen'
 " Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'tomtom/tcomment_vim'
@@ -64,7 +64,7 @@ map <leader>ntf :NERDTreeFind
 
 let g:nerdtree_tabs_open_on_gui_startup = 0 " Don't auto open nerdtree for gui
 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",

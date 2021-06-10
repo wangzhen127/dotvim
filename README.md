@@ -17,9 +17,9 @@ echo .git >> ~/.agignore
 echo .svn >> ~/.agignore
 echo .hg >> ~/.agignore
 
-cd bundle/YouCompleteMe
-./install.py --clang-completer --tern-completer
-cd ../../
+# cd bundle/YouCompleteMe
+# ./install.py --clang-completer --tern-completer
+# cd ../../
 
 # For quickopen, need to add the targe project to index from command line.
 # See https://github.com/natduca/quickopen
